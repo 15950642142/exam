@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ <!-- 员工信息字段配置信息 -->
+ <hibernate-mapping>
+ 	<class name="com.bwie.model.Person" table="peoson">
+ 		<!-- id值 -->
+ 		<id name="id" column="id" type="int">
+			<generator class="native"/>
+		</id>
+		<!-- 姓名 -->
+		
+		<property name="name" type="string" length="255">
+			<column name="name"/><!-- 数据库名 -->
+		</property>
+		<!-- 密码 -->
+		<property name="sex" type="string" length="255">
+			<column name="sex"/>
+		</property>
+		<property name="age" type="int" length="11">
+			<column name="age"/>
+		</property>
+		<property name="addr" type="string" length="255">
+			<column name="addr"/>
+		</property>
+		<many-to-one name="cid" column="cid" class="com.bwie.model.Country">
+		</many-to-one>
+		
+		
+ 	</class>
+ </hibernate-mapping>
